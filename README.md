@@ -2,7 +2,7 @@
 ### Organize, Customize and Manage Your Travel Plans!
 
 **Possible Features:**  
-- itinerary creation with name of who suggested it
+- itinerary creation
 - itinerary management (calendar view)
 - budget tracking + splitting of costs
 - journaling + current weather conditions
@@ -41,3 +41,4 @@ serve as an all-in-one travel buddy.
 - As a user, I want to receive reminders about my trip.
 - As a user, I want to have an offline currency converter 
 that allows me to enter a number and gives back another number.
+- 
