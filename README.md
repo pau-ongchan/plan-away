@@ -41,4 +41,3 @@ serve as an all-in-one travel buddy.
 - As a user, I want to receive reminders about my trip.
 - As a user, I want to have an offline currency converter 
 that allows me to enter a number and gives back another number.
-- 
