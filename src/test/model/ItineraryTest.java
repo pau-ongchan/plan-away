@@ -60,6 +60,11 @@ class ItineraryTest {
         assertEquals(p1,filledItinerary.getPlan(0));
         assertEquals(p3,filledItinerary.getPlan(1));
         assertEquals(p4,filledItinerary.getPlan(2));
+        filledItinerary.removePlan("Mexico");
+        assertEquals(3, filledItinerary.getNumPlans());
+        assertEquals(p1,filledItinerary.getPlan(0));
+        assertEquals(p3,filledItinerary.getPlan(1));
+        assertEquals(p4,filledItinerary.getPlan(2));
     }
 
     @Test
