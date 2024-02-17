@@ -55,16 +55,13 @@ class ItineraryTest {
 
     @Test
     void testRemovePlan(){
-        filledItinerary.removePlan("Whistler");
+        assertTrue(filledItinerary.removePlan("Whistler"));
         assertEquals(3, filledItinerary.getNumPlans());
         assertEquals(p1,filledItinerary.getPlan(0));
         assertEquals(p3,filledItinerary.getPlan(1));
         assertEquals(p4,filledItinerary.getPlan(2));
-        filledItinerary.removePlan("Mexico");
+        assertFalse(filledItinerary.removePlan("Mexico"));
         assertEquals(3, filledItinerary.getNumPlans());
-        assertEquals(p1,filledItinerary.getPlan(0));
-        assertEquals(p3,filledItinerary.getPlan(1));
-        assertEquals(p4,filledItinerary.getPlan(2));
     }
 
     @Test
@@ -79,5 +76,11 @@ class ItineraryTest {
     void testResetItinerary(){
         filledItinerary.resetItinerary();
         assertEquals(0,filledItinerary.getNumPlans() );
+    }
+
+    @Test
+    void testSetDay() {
+        filledItinerary.setDay(2);
+        assertEquals(2, filledItinerary.getNumberOfDays());
     }
 }
