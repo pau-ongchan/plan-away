@@ -114,8 +114,7 @@ public class ItineraryApp {
         }
     }
 
-    //EFFECTS:
-
+    //EFFECTS: Display the plans according to their days
     private void doViewPlan() {
         System.out.println("Here is your itinerary: \n");
         int day = 0;
@@ -132,22 +131,8 @@ public class ItineraryApp {
         System.out.println("----- End -----");
     }
 
-//    private void doViewPlan() {
-//        System.out.println("Here is your itinerary: \n");
-//        int day = 0;
-//        LinkedList<Plan> listOfPlans = it.viewItinerary();
-//        for (Plan p : listOfPlans) {
-//            if (day != p.getDay()) {
-//                System.out.println("\n Day " + p.getDay());
-//                System.out.println(p.getLocation() + "  -  " + p.getDescription());
-//                day = p.getDay();
-//            } else {
-//                System.out.println(p.getLocation() + "  -  " + p.getDescription());
-//            }
-//        }
-//        System.out.println("----- End -----");
-//    }
-
+    //MODIFIES: this
+    //EFFECTS: Removes all the plans in the current itinerary
     private void doReset() {
         it.resetItinerary();
         System.out.println("Itinerary has been reset.");
