@@ -90,7 +90,7 @@ public class ItineraryApp {
         Plan plan = new Plan(0, null, null);
 
         if (day > it.getNumberOfDays()) {
-            System.out.println("Please choose a day between 1 and " +  it.getNumberOfDays());
+            System.out.println("Please choose a day between 1 and " + it.getNumberOfDays());
         } else {
             plan.setLocation(loc);
             plan.setDay(day);
@@ -152,7 +152,6 @@ public class ItineraryApp {
         it.resetItinerary();
         System.out.println("Itinerary has been reset.");
     }
-
 
 
 }

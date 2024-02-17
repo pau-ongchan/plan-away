@@ -18,7 +18,7 @@ class ItineraryTest {
 
     @BeforeEach
     void runBefore() {
-        testItinerary = new Itinerary( 3);
+        testItinerary = new Itinerary(3);
         filledItinerary = new Itinerary(4);
         arrangedItinerary = new Itinerary(4);
         p1 = new Plan(1, "Stanley", "Picnic with friends");
@@ -49,17 +49,17 @@ class ItineraryTest {
         assertEquals(p1, testItinerary.getPlan(0));
         assertEquals(1, testItinerary.getNumPlans());
         testItinerary.addPlan(p2);
-        assertEquals(p2,testItinerary.getPlan(1));
+        assertEquals(p2, testItinerary.getPlan(1));
         assertEquals(2, testItinerary.getNumPlans());
     }
 
     @Test
-    void testRemovePlan(){
+    void testRemovePlan() {
         assertTrue(filledItinerary.removePlan("Whistler"));
         assertEquals(3, filledItinerary.getNumPlans());
-        assertEquals(p1,filledItinerary.getPlan(0));
-        assertEquals(p3,filledItinerary.getPlan(1));
-        assertEquals(p4,filledItinerary.getPlan(2));
+        assertEquals(p1, filledItinerary.getPlan(0));
+        assertEquals(p3, filledItinerary.getPlan(1));
+        assertEquals(p4, filledItinerary.getPlan(2));
         assertFalse(filledItinerary.removePlan("Mexico"));
         assertEquals(3, filledItinerary.getNumPlans());
     }
@@ -73,9 +73,9 @@ class ItineraryTest {
     }
 
     @Test
-    void testResetItinerary(){
+    void testResetItinerary() {
         filledItinerary.resetItinerary();
-        assertEquals(0,filledItinerary.getNumPlans() );
+        assertEquals(0, filledItinerary.getNumPlans());
     }
 
     @Test
