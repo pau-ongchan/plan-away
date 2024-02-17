@@ -12,6 +12,7 @@ public class Itinerary {
     public Itinerary(int days) {
         itinerary = new LinkedList<>();
         numberOfDays = days;
+        arrangedItinerary = new LinkedList<>();
     }
 
     //REQUIRES: 0 < plan.getDay() <= numberOfDays
@@ -36,7 +37,14 @@ public class Itinerary {
     //REQUIRES: 0 < p.getDay() <= numberOfDays
     //EFFECTS: returns itinerary according to their days
     public LinkedList<Plan> viewItinerary() {
-        return itinerary;
+        for (int i = 1; i <= numberOfDays; i++) {
+            for (Plan p : itinerary) {
+                if (p.getDay() == i) {
+                    arrangedItinerary.add(p);
+                }
+            }
+        }
+        return arrangedItinerary;
     }
 
     //MODIFIES: this

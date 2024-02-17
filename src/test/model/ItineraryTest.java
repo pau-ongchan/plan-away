@@ -70,8 +70,9 @@ class ItineraryTest {
     @Test
     void testViewItinerary() {
         assertEquals(p1, filledItinerary.viewItinerary().get(0));
-        assertEquals(p2, filledItinerary.viewItinerary().get(1));
-        assertEquals(p3, filledItinerary.viewItinerary().get(2));
+        assertEquals(p3, filledItinerary.viewItinerary().get(1));
+        assertEquals(p4, filledItinerary.viewItinerary().get(2));
+        assertEquals(p2, filledItinerary.viewItinerary().get(3));
     }
 
     @Test
