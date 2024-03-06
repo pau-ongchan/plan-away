@@ -1,0 +1,16 @@
+{
+    "plans": [
+        {
+            "description": "Universal Studios",
+            "location": "Osaka",
+            "day": 3
+        },
+        {
+            "description": "Eat Wagyu",
+            "location": "Tokyo",
+            "day": 1
+        }
+    ],
+    "name": "JP Trip",
+    "days": 4
+}

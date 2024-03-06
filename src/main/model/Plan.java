@@ -1,6 +1,10 @@
 package model;
 
-public class Plan {
+import org.json.JSONObject;
+import persistence.Writable;
+
+// Represents a plan having a day, location, and a description
+public class Plan implements Writable {
     private String location;
     private int day;
     private String description;
@@ -63,6 +67,15 @@ public class Plan {
     //EFFECTS: changes the status of the plan to visited
     public void revisit() {
         hasVisited = false;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("day", day);
+        json.put("location", location);
+        json.put("description", description);
+        return json;
     }
 
 }

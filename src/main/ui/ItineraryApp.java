@@ -2,18 +2,29 @@ package ui;
 
 import model.Itinerary;
 import model.Plan;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLOutput;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+// Represents the itinerary application
+// code inspired by the TellerApp and JsonSerializationDemo
 public class ItineraryApp {
-    // code inspired by the TellerApp
+    private static final String JSON_STORE = "./data/itinerary.json";
     private Itinerary it;
     private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     //EFFECTS: runs the Itinerary Application
     public ItineraryApp() {
+        input = new Scanner(System.in);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runItinerary();
     }
 
@@ -51,6 +62,10 @@ public class ItineraryApp {
             doViewPlan();
         } else if (command.equals("r")) {
             doReset();
+        } else if (command.equals("s")) {
+            doSave();
+        } else if (command.equals("l")) {
+            doLoad();
         } else {
             System.out.println("Selection not valid. Please choose again.");
         }
@@ -59,17 +74,19 @@ public class ItineraryApp {
     //MODIFIES: this
     //EFFECTS: initializes itinerary
     private void init() {
-        it = new Itinerary(0);
         input = new Scanner(System.in);
         input.useDelimiter("\n");
+        System.out.println("Name: ");
+        String name = input.next();
         System.out.println("Trip Length: ");
         int numOfDays = input.nextInt();
-        it.setDay(numOfDays);
-
+        it = new Itinerary(name,numOfDays);
     }
 
     //EFFECTS: displays menu of options to user
     private void displayMenu() {
+        System.out.println("\nItinerary Name: " + it.getName());
+        System.out.println("\nItinerary Length: " + it.getNumberOfDays());
         System.out.println("\nSelect from:");
         System.out.println("\t [+] -> Add Plan");
         System.out.println("\t [-] -> Remove Plan");
@@ -137,6 +154,30 @@ public class ItineraryApp {
         it.resetItinerary();
         System.out.println("Itinerary has been reset.");
     }
+
+    // EFFECTS: saves the itinerary to file
+    private void doSave() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(it);
+            jsonWriter.close();
+            System.out.println("Saved " + it.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads itinerary from file
+    private void doLoad() {
+        try {
+            it = jsonReader.read();
+            System.out.println("Loaded " + it.getName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
+    }
+
 
 
 }

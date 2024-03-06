@@ -1,16 +1,23 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.LinkedList;
 
-public class Itinerary {
+// Represents an itinerary having a collection of plans
+public class Itinerary implements Writable {
 
     private LinkedList<Plan> itinerary;
     private int numberOfDays;
+    private String name;
 
     //EFFECTS: creates an instance of Itinerary with no plans
-    public Itinerary(int days) {
-        itinerary = new LinkedList<>();
+    public Itinerary(String name, int days) {
+        this.name = name;
         numberOfDays = days;
+        itinerary = new LinkedList<>();
     }
 
     //REQUIRES: 0 < plan.getDay() <= numberOfDays
@@ -70,10 +77,39 @@ public class Itinerary {
         return itinerary.get(index);
     }
 
+    //EFFECTS: returns the name of the itinerary
+    public String getName() {
+        return name;
+    }
+
+    //EFFECTS: returns all the plans in the itinerary
+    public LinkedList<Plan> getAllPlans() {
+        return itinerary;
+    }
+
     //MODIFIES: this
     //EFFECTS: sets number of days to the new number of days
     public void setDay(int num) {
         numberOfDays = num;
     }
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("days", numberOfDays);
+        json.put("plans", plansToJson());
+        return json;
+    }
+
+    // EFFECTS: returns plans in this itinerary as a JSON array
+    private JSONArray plansToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Plan p : itinerary) {
+            jsonArray.put(p.toJson());
+        }
+
+        return jsonArray;
+    }
 }

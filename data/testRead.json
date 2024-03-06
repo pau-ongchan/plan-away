@@ -1,0 +1,16 @@
+{
+  "plans": [
+    {
+      "day": "2",
+      "location": "San Francisco",
+      "description": "Visit the Golden Gate Bridge"
+    },
+    {
+      "day": "1",
+      "location": "Los Angeles",
+      "description": "Visit the Hollywood Sign"
+    }
+  ],
+  "name": "US Trip",
+  "days": 3
+}

@@ -18,9 +18,9 @@ class ItineraryTest {
 
     @BeforeEach
     void runBefore() {
-        testItinerary = new Itinerary(3);
-        filledItinerary = new Itinerary(4);
-        arrangedItinerary = new Itinerary(4);
+        testItinerary = new Itinerary("Korea Trip",3);
+        filledItinerary = new Itinerary("BC Trip",4);
+        arrangedItinerary = new Itinerary("US Trip",4);
         p1 = new Plan(1, "Stanley", "Picnic with friends");
         p2 = new Plan(3, "Whistler", "Skiing with friends");
         p3 = new Plan(1, "Pacific Center", "Eat Sushi");
@@ -41,6 +41,7 @@ class ItineraryTest {
     void testConstructor() {
         assertEquals(3, testItinerary.getNumberOfDays());
         assertEquals(0, testItinerary.getNumPlans());
+        assertEquals("Korea Trip", testItinerary.getName());
     }
 
     @Test
