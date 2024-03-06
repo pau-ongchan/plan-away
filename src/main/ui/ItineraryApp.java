@@ -33,11 +33,19 @@ public class ItineraryApp {
     private void runItinerary() {
         boolean keepGoing = true;
         String command = null;
+        String initial = null;
 
-        init();
+        displayMenuFirst();
+        initial = input.next();
+        initial = initial.toLowerCase();
+        if (initial.equals("n")) {
+            init();
+        } else {
+            processCommand(initial);
+        }
 
         while (keepGoing) {
-            displayMenu();
+            displayMenuSecond();
             command = input.next();
             command = command.toLowerCase();
 
@@ -83,17 +91,23 @@ public class ItineraryApp {
         it = new Itinerary(name,numOfDays);
     }
 
-    //EFFECTS: displays menu of options to user
-    private void displayMenu() {
+    //EFFECTS: displays menu of initial options to user
+    private void displayMenuFirst() {
+        System.out.println("\nSelect from:");
+        System.out.println("\t [N] -> Create New Itinerary");
+        System.out.println("\t [L] -> Load Itinerary");
+    }
+
+    //EFFECTS: displays menu of more options to user
+    private void displayMenuSecond() {
         System.out.println("\nItinerary Name: " + it.getName());
         System.out.println("\nItinerary Length: " + it.getNumberOfDays());
         System.out.println("\nSelect from:");
         System.out.println("\t [+] -> Add Plan");
         System.out.println("\t [-] -> Remove Plan");
-        System.out.println("\t [V] -> View Plan");
-        System.out.println("\t [R] -> Reset");
-        System.out.println("\t [S] -> Save Plan");
-        System.out.println("\t [L] -> Load Plan");
+        System.out.println("\t [V] -> View Itinerary");
+        System.out.println("\t [R] -> Reset Itinerary");
+        System.out.println("\t [S] -> Save Itinerary");
         System.out.println("\t [X] -> Exit");
     }
 
