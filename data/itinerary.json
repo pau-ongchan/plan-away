@@ -1,0 +1,21 @@
+{
+    "plans": [
+        {
+            "description": "Universal",
+            "location": "Osaka",
+            "day": 2
+        },
+        {
+            "description": "hello",
+            "location": "Tokyo",
+            "day": 4
+        },
+        {
+            "description": "abc",
+            "location": "Tokyo",
+            "day": 1
+        }
+    ],
+    "name": "Japan Trip",
+    "days": 4
+}

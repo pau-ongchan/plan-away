@@ -92,6 +92,8 @@ public class ItineraryApp {
         System.out.println("\t [-] -> Remove Plan");
         System.out.println("\t [V] -> View Plan");
         System.out.println("\t [R] -> Reset");
+        System.out.println("\t [S] -> Save Plan");
+        System.out.println("\t [L] -> Load Plan");
         System.out.println("\t [X] -> Exit");
     }
 
