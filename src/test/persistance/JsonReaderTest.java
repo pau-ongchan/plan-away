@@ -1,8 +1,9 @@
-package persistence;
+package persistance;
 
 import model.Itinerary;
 import model.Plan;
 import org.junit.jupiter.api.Test;
+import persistence.JsonReader;
 
 import java.io.IOException;
 import java.util.LinkedList;
