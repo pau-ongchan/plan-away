@@ -107,7 +107,7 @@ public class ItineraryController {
     // EFFECTS: Returns a string that formats the details of the current itinerary
     private String formatItineraryDetails() {
         StringBuilder builder = new StringBuilder();
-        LinkedList <Plan> listOfPlans = itinerary.viewItinerary();
+        LinkedList<Plan> listOfPlans = itinerary.viewItinerary();
         for (Plan plan : listOfPlans) {
             builder.append("\n Day ").append(plan.getDay())
                     .append("\n Location: ").append(plan.getLocation())
