@@ -7,7 +7,6 @@ import persistence.JsonWriter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.LinkedList;
 import java.util.Scanner;
 

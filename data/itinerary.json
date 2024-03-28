@@ -1,5 +1,9 @@
 {
-    "plans": [],
-    "name": "US Trip",
-    "days": 5
+    "plans": [{
+        "description": "hi",
+        "location": "Burnaby",
+        "day": 1
+    }],
+    "name": "Canada",
+    "days": 6
 }
