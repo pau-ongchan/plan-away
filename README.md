@@ -36,3 +36,12 @@ serve as an all-in-one travel buddy.
   - As a user, I want to be able to save my itinerary list to file (if I so choose)
   - As a user, I want to be able to be able to load my itinerary from file (if I so choose)
 
+# Instructions for Grader
+
+- You can generate "add multiple Xs to a Y" by clicking on the Add Plan Button
+- You can generate "delete X from a Y" by clicking on the Delete Plan Button
+- You can generate "reset itinerary (delete all plans)" by clicking on the Reset Itinerary Button
+- You can locate my visual component by opening the app, and after going in the dashboard, 
+  the visual component acts as a button to go back to the previous page.
+- You can save the state of my application by clicking on the save itinerary button.
+- You can reload the state of my application by load itinerary button.
