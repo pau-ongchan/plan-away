@@ -61,3 +61,14 @@ Sun Apr 07 20:01:18 PDT 2024
 Added plan with location: Downtown
 Sun Apr 07 20:01:22 PDT 2024
 Itinerary Reset
+
+**Phase 4 Task 3**
+- If I had more time, I think I would use the observer design method so that my UI (dashboard) would be notified of the
+  changes by being an observer. This reduces coupling so that when I change my itinerary it does not ripple through 
+  the other parts and cause the other parts to break.
+- How I would do it: 
+  - Create two classes (Observer, Observable). 
+  - Make itinerary extend Observable and DashboardPanel to implement Observer. 
+  - Create an update method in the DashboardPanel which would update the panel when notified. 
+  - Create a notifyObserver method to notify observers of the change.
+  - Add DashboardPanel into the list of Observers itinerary.add(dashboardPanel).
