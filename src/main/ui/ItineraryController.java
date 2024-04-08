@@ -55,7 +55,7 @@ public class ItineraryController {
     public void addPlan(String location, int day, String description) {
         Plan plan = new Plan(day, location, description);
         itinerary.addPlan(plan);
-        System.out.println(location + " has been added!");
+        // System.out.println(location + " has been added!");
         viewItinerary();
     }
 
@@ -65,10 +65,10 @@ public class ItineraryController {
     //         if not print message in the console
     public void deletePlan(String location) {
         if (itinerary.removePlan(location)) {
-            System.out.println(location + " has been deleted");
+            // System.out.println(location + " has been deleted");
             viewItinerary();
         } else {
-            System.out.println("Could not find location!");
+            // System.out.println("Could not find location!");
         }
     }
 
@@ -76,7 +76,7 @@ public class ItineraryController {
     //EFFECTS: resets the itinerary to empty, updates the dashboard
     public void resetItinerary() {
         itinerary.resetItinerary();
-        System.out.println("Itinerary has been reset");
+        // System.out.println("Itinerary has been reset");
         viewItinerary();
     }
 
@@ -86,9 +86,9 @@ public class ItineraryController {
             jsonWriter.open();
             jsonWriter.write(itinerary);
             jsonWriter.close();
-            System.out.println("Saved " + itinerary.getName() + " to " + JSON_STORE);
+            // System.out.println("Saved " + itinerary.getName() + " to " + JSON_STORE);
         } catch (FileNotFoundException e) {
-            System.out.println("Unable to write to file: " + JSON_STORE);
+            // System.out.println("Unable to write to file: " + JSON_STORE);
         }
     }
 
@@ -99,7 +99,7 @@ public class ItineraryController {
             String itineraryInfo = formatItineraryDetails();
             dashboardPanel.updateItineraryDisplay(itineraryInfo);
         } else {
-            System.out.println("Dashboard panel not initialized.");
+            // System.out.println("Dashboard panel not initialized.");
         }
     }
 

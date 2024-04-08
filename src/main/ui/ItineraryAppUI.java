@@ -1,7 +1,12 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 // code inspired by AlarmController.java
 // Main class - represents application's main window frame
@@ -34,6 +39,13 @@ public class ItineraryAppUI {
         frame.add(initialPanel, "InitialPage");
         frame.add(dashboardPanel, "Dashboard");
 
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                printEventsAndExit();
+            }
+        });
+
         frame.setVisible(true);
 
     }
@@ -46,6 +58,14 @@ public class ItineraryAppUI {
     //EFFECT: Displays Initial Pane
     public void showInitial() {
         cardLayout.show(frame.getContentPane(),"InitialPage");
+    }
+
+    private void printEventsAndExit() {
+        EventLog eventLog = EventLog.getInstance();
+        for (Event event : eventLog) {
+            System.out.println(event);
+        }
+        System.exit(0);
     }
 
 }

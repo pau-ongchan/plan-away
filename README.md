@@ -36,7 +36,7 @@ serve as an all-in-one travel buddy.
   - As a user, I want to be able to save my itinerary list to file (if I so choose)
   - As a user, I want to be able to be able to load my itinerary from file (if I so choose)
 
-# Instructions for Grader
+**Instructions for Grader**
 
 - You can generate "add multiple Xs to a Y" by clicking on the Add Plan Button
 - You can generate "delete X from a Y" by clicking on the Delete Plan Button
@@ -45,3 +45,19 @@ serve as an all-in-one travel buddy.
   the visual component acts as a button to go back to the previous page.
 - You can save the state of my application by clicking on the save itinerary button.
 - You can reload the state of my application by load itinerary button.
+
+**Phase 4 Task 2**
+Sun Apr 07 20:00:07 PDT 2024
+Added plan with location: Burnaby
+Sun Apr 07 20:00:23 PDT 2024
+Added plan with location: SFU
+Sun Apr 07 20:00:36 PDT 2024
+Added plan with location: UBC
+Sun Apr 07 20:01:01 PDT 2024
+Added plan with location: Downtoqn
+Sun Apr 07 20:01:06 PDT 2024
+Removed plan with location: Downtoqn
+Sun Apr 07 20:01:18 PDT 2024
+Added plan with location: Downtown
+Sun Apr 07 20:01:22 PDT 2024
+Itinerary Reset

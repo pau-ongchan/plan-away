@@ -25,6 +25,7 @@ public class Itinerary implements Writable {
     // EFFECTS: adds Plan to the end of the queue
     public void addPlan(Plan plan) {
         itinerary.add(plan);
+        EventLog.getInstance().logEvent(new Event("Added plan with location: " + plan.getLocation()));
     }
 
     //REQUIRES: itinerary not empty
@@ -34,6 +35,7 @@ public class Itinerary implements Writable {
         for (Plan p : itinerary) {
             if (p.getLocation().equalsIgnoreCase(location)) {
                 itinerary.remove(p);
+                EventLog.getInstance().logEvent(new Event("Removed plan with location: " + location));
                 return true;
             }
         }
@@ -59,6 +61,7 @@ public class Itinerary implements Writable {
     //EFFECTS: removes all plans in the itinerary
     public void resetItinerary() {
         itinerary.clear();
+        EventLog.getInstance().logEvent(new Event("Itinerary Reset"));
 
     }
 
