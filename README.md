@@ -54,9 +54,9 @@ Added plan with location: SFU
 Sun Apr 07 20:00:36 PDT 2024
 Added plan with location: UBC
 Sun Apr 07 20:01:01 PDT 2024
-Added plan with location: Downtoqn
+Added plan with location: Downtown
 Sun Apr 07 20:01:06 PDT 2024
-Removed plan with location: Downtoqn
+Removed plan with location: Downtown
 Sun Apr 07 20:01:18 PDT 2024
 Added plan with location: Downtown
 Sun Apr 07 20:01:22 PDT 2024
